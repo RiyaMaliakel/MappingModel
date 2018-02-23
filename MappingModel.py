@@ -45,6 +45,7 @@ def main(_):
         print(d)
         output = out.eval()
         print(output)
+        tf.train.write_graph(sess.graph_def, '.', 'mappingmodel.pbtxt')  
         save_path = saver.save(sess, "model_table1/model.ckpt")
         print("Model saved in file: %s" % save_path)
 
